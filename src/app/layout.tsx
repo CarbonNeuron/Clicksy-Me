@@ -18,7 +18,6 @@ import Navbar from "@/Components/Root/Nav";
 export const metadata: Metadata = {
   title: "Clicksy Me",
   description: "A fun thing to do",
-  icons: "/favicon.ico",
 };
 
 export default function RootLayout({
