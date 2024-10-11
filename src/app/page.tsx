@@ -5,7 +5,7 @@ export default async function Home() {
   return (
     <main>
       <Container component={"main"}>
-        <Typography>Hello world!</Typography>
+        <Typography>Welcome to clicksy me!</Typography>
         <ThemeSwitcher />
       </Container>
     </main>

@@ -4,19 +4,21 @@ import { Paper, Typography } from "@mui/material";
 import { createClient } from "@/utils/supabase/client";
 import { useEffect, useState } from "react";
 
+const supabase = createClient();
+const roomOne = supabase.channel("room_1");
+
 export default function UserCount({
   initialUserCount,
 }: {
   initialUserCount: number;
 }) {
   const [count, setCount] = useState<number>(initialUserCount);
-  const supabase = createClient();
 
   useEffect(() => {
     const userStatus = {
       online_at: new Date().toISOString(),
     };
-    const roomOne = supabase.channel("room_1");
+
     roomOne
       .on("presence", { event: "sync" }, () => {
         const newState = roomOne.presenceState();
@@ -41,7 +43,7 @@ export default function UserCount({
     return () => {
       roomOne.untrack();
     };
-  }, [supabase]);
+  }, []);
 
   return (
     <Paper
