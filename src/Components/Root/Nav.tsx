@@ -1,5 +1,6 @@
-import { AppBar, Container, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Container, Toolbar, Typography } from "@mui/material";
 import MouseIcon from "@mui/icons-material/Mouse";
+import UserCount from "@/Components/Main/UserCount";
 
 export default async function Navbar() {
   return (
@@ -13,6 +14,8 @@ export default async function Navbar() {
           <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
             Clicksy Me
           </Typography>
+          <Box sx={{ ml: "auto" }}></Box>
+          <UserCount initialUserCount={0} />
         </Toolbar>
       </Container>
     </AppBar>

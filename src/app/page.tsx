@@ -1,7 +1,7 @@
 import { Container, Typography } from "@mui/material";
 import ThemeSwitcher from "@/Components/Root/ThemeSwitcher";
 
-export default function Home() {
+export default async function Home() {
   return (
     <main>
       <Container component={"main"}>
